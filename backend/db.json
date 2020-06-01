@@ -1,0 +1,28 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "login": "asilv17",
+        "name": "Alexsandro Rodrigues",
+        "password": "U2FsdGVkX19gAXpgSMtZ34tXX8nJU0UmLJbsQoSU170=",
+        "profile": "1"
+      },
+      {
+        "id": 2,
+        "login": "rsilva",
+        "name": "Rogerio da Silva",
+        "password": "U2FsdGVkX1+S5wPUWJ62/I0XVTnRC4GZxnO9/us+mv8=",
+        "profile": "2"
+      }
+    ],
+    "todos": [
+      {
+        "id": 1,
+        "title": "Todo Teste",
+        "datetime": "31/05/2020 22:00:00",
+        "createdBy": "fulano1",
+        "creationDateTime": "30/05/2020 12:00:00",
+        "profile": "2"
+      }
+    ]
+  }
