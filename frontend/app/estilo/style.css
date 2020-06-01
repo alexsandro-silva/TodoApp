@@ -1,0 +1,83 @@
+body {
+    padding-top: 60px;
+}
+
+/* menu principal */
+.clear-button {
+    position: absolute;
+    right: 14px;
+    top: 0;
+    bottom: 0;
+    height: 15px;
+    margin: auto;
+    font-size: 15px;
+    cursor: pointer;
+    color: #cccccc;
+    z-index: 1;
+}
+
+.clear-button:hover {
+    color: #808080;
+}
+
+/* Formulario login */
+div.login-form {
+    float: none;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+    padding: 25px;
+}
+
+/* Toast */
+#toast {
+    visibility: hidden;
+    width: 75%;
+    margin-left: -37.5%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 16px;
+    position: fixed;
+    z-index: 9999999;
+    left: 50%;
+    top: 61px;
+    font-size: 17px;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;;
+}
+
+.erro {
+    background-color: #ffcccc;
+    color: #800000;
+    border: 1px solid #cc0000;
+}
+
+.sucesso {
+    background-color: #ccffdd;
+    color: #00802b;
+    border: 1px solid #00cc44;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to   {top: 61px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to   {top: 61px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 61px; opacity: 1;}
+    to   {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 61px; opacity: 1;}
+    to   {top: 0; opacity: 0;}
+}

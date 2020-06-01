@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/estilo/style.css">
+
+    <title>TodoApp</title>
+</head>
+<body>
+
+    <main-menu></main-menu>
+    <div ng-view></div>
+
+    
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+
+    <script src="app/lib/aes.js"></script>
+    <script src="app/modules/angular-crypto.js"></script>
+    <script src="app/application.js"></script>
+    <script src="app/services/authentication.service.js"></script>
+    <script src="app/services/toast.service.js"></script>
+    <script src="app/controllers/home.controller.js"></script>
+    <script src="app/controllers/login.controller.js"></script>
+    <script src="app/components/templates/main-menu/main-menu.component.js"></script>
+</body>
+</html>
