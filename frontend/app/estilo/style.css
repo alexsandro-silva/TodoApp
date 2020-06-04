@@ -81,3 +81,11 @@ div.login-form {
     from {top: 61px; opacity: 1;}
     to   {top: 0; opacity: 0;}
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}

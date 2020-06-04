@@ -1,9 +1,9 @@
-todoApp.factory('AuthenticationService', function($http, $q, $window, $crypto, GlobalConfiguration) {
+todoApp.factory('AuthenticationService', function($rootScope, $http, $q, $window, $crypto, GlobalConfiguration) {
     let userInfo;
 
     (function init() {
         if ($window.sessionStorage['userInfo']) {
-            userInfo = JSON.stringify($window.sessionStorage['userInfo']);
+            userInfo = JSON.parse($window.sessionStorage['userInfo']);
         }
     })();
 
@@ -21,9 +21,10 @@ todoApp.factory('AuthenticationService', function($http, $q, $window, $crypto, G
                                 id: user.id,
                                 login: user.login,
                                 name: user.name,
-                                profile: user.profile
+                                profile: GlobalConfiguration.perfil[user.profile]
                             };
                             $window.sessionStorage['userInfo'] = JSON.stringify(userInfo);
+                            $rootScope.$broadcast('AuthChanged', {authenticated: true, 'userInfo': userInfo});
                             deferred.resolve(userInfo);
                         } else {
                             deferred.reject('Usuário ou senha inválidos!');
@@ -40,7 +41,8 @@ todoApp.factory('AuthenticationService', function($http, $q, $window, $crypto, G
         logout: function() {
             var deferred = $q.defer();
             userInfo = null;
-            $window.sessionStorage['userInfo'] = null;
+            $window.sessionStorage.removeItem('userInfo');
+            $rootScope.$broadcast('AuthChanged', {authenticated: false});
             deferred.resolve();
             return deferred.promise;
         },
