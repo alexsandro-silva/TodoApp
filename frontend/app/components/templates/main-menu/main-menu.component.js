@@ -35,10 +35,8 @@ todoApp.component("mainMenu", {
       });
 
       (function init() {
-        if (AuthenticationService.isAuthenticated()) {
-          scope.isAuthenticated = true;
-          scope.userInfo = AuthenticationService.getUserInfo();
-        }
+        scope.isAuthenticated = AuthenticationService.isAuthenticated();
+        scope.userInfo = AuthenticationService.getUserInfo();
       })();
     },
   ],
