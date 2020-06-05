@@ -21,10 +21,6 @@ todoApp.component("mainMenu", {
         });
       };
 
-      //scope.isAuthenticated = function () {
-      //  return AuthenticationService.isAuthenticated();
-      //};
-
       scope.$on('AuthChanged', function(event, eventObj){
         if (eventObj.authenticated === true) {
           scope.isAuthenticated = true;
