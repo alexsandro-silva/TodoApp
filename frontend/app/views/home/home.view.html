@@ -1,18 +1,47 @@
 <div class="container mt-3">
     <div class="row">
-        <div class="col-sm-6" ng-repeat="todo in todos">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills nav-justified mb-5">
+                <li class="nav-item" ng-repeat="profile in profiles">
+                    <a
+                        href=""
+                        class="nav-link"
+                        ng-class="{'active': profile.idPerfil == activeTab}"
+                        ng-click="listarAtividadesPorPerfil(profile.idPerfil)"
+                        >{{profile.descPerfil}}</a
+                    >
+                </li>
+            </ul>
+
+            <!--<div class="btn-group mb-5" role="group">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    ng-repeat="profile in profiles"
+                    ng-click="listarAtividadesPorPerfil(profile.idPerfil)"
+                >
+                    {{profile.descPerfil}}
+                </button>
+            </div>-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" ng-repeat="atividade in atividades">
             <div class="card mt-2 mb-3 border-info">
                 <div class="card-header">
-                    <strong>Executar em: {{todo.datetime}}</strong>
+                    <strong>Executar em: {{atividade.datetime}}</strong>
                 </div>
                 <div class="card-body text-info">
-                    <h4 class="card-title">{{todo.title}}</h4>
-                    <p class="card-text">{{todo.description}}</p>
+                    <h4 class="card-title">{{atividade.title}}</h4>
+                    <p class="card-text">{{atividade.description}}</p>
                     <button class="btn btn-success btn-sm">
                         <i class="fa fa-check-square-o"></i> Finalizar
                     </button>
                     <div class="card-text pull-right">
-                        <small class="text-muted"><i class="fa fa-info-circle"></i> {{todo.createdBy}}&#64;{{todo.creationDateTime}}</small>
+                        <small class="text-muted"
+                            ><i class="fa fa-info-circle"></i>
+                            {{atividade.createdBy}}&#64;{{atividade.creationDateTime}}</small
+                        >
                     </div>
                 </div>
             </div>
