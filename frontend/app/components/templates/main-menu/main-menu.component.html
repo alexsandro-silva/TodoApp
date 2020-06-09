@@ -1,28 +1,62 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">{{appName}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">{{ appName }}</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-if="isAuthenticated">
+    <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+        ng-if="isAuthenticated"
+    >
         <form class="form-inline my-2 my-lg-0 mr-auto">
             <div class="btn-group">
-                <input class="form-control form-control-sm mr-sm-2" id="date-search" type="text" placeholder="busca por data" aria-label="filtrar por data">
-                <i class="fa fa-times-circle clear-button"></i>
+                <input
+                    class="form-control form-control-sm mr-sm-2"
+                    id="date-search"
+                    type="text"
+                    placeholder="busca por data"
+                    aria-label="filtrar por data"
+                    ng-model="date"
+                    datepicker
+                />
+                <i class="fa fa-times-circle clear-button" ng-click="date = ''"></i>
             </div>
-            <button class="btn btn-outline-info btn-sm">Novo</button>
+            <button class="btn btn-outline-info btn-sm" ng-click="searchByDate(date)">Novo</button>
         </form>
         <form class="form-inline my-2 my-lg-0 pull-right">
             <ul class="navbar-nav">
                 <li>
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{userInfo.name}}&nbsp;&#91;{{userInfo.profile.descPerfil}}&#93;
+                    <a
+                        class="nav-link dropdown-toggle"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        <i class="fa fa-user-circle" aria-hidden="true"></i
+                        >&nbsp;{{ userInfo.name }}&nbsp;&#91;{{
+                            userInfo.profile.descPerfil
+                        }}&#93;
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div
+                        class="dropdown-menu dropdown-menu-right"
+                        aria-labelledby="navbarDropdown"
+                    >
                         <a class="dropdown-item" href="" ng-click="logout()">
-                            <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Sair
+                            <i class="fa fa-sign-out" aria-hidden="true"></i
+                            >&nbsp;Sair
                         </a>
-                    </div>    
+                    </div>
                 </li>
             </ul>
         </form>

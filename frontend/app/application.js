@@ -1,4 +1,4 @@
-let todoApp = angular.module("todoApp", [
+const todoApp = angular.module("todoApp", [
   "mdo-angular-cryptography",
   "ngRoute",
 ]);

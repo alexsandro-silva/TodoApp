@@ -29,6 +29,10 @@ todoApp.controller("HomeController", [
             }
         };
 
+        scope.$on('SearchByDate', (event, eventObj) => {
+            alert(eventObj.date);
+        });
+
         function listarAtividades() {
             TodoApiService.listarTodos().then(function (success) {
                 scope.atividades = success.data;
